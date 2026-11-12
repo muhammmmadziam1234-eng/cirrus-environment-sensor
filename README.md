@@ -1,6 +1,10 @@
 # Cirrus C-01
 
-Cirrus is a fictional wall-mounted environmental sensor concept. The editable assembly includes the enclosure, captive hardware, boards, compression gasket, wall cleat, and two studio cameras. The enclosure measures approximately **104 × 109 × 34 mm**, plus 8 mm for the cleat.
+Cirrus C-01 is a wall-mounted environmental sensor enclosure developed as an industrial design and assembly project. The editable assembly includes the enclosure, captive hardware, boards, compression gasket, wall cleat, and two studio cameras. The enclosure measures approximately **104 × 109 × 34 mm**, plus 8 mm for the cleat.
+
+![Cirrus C-01 enclosure and exploded assembly](renders/exploded.png)
+
+[Product campaign](https://github.com/muhammmmadziam1234-eng/cirrus-formline-ad-campaigns#cirrus)
 
 ## Open and explore
 
