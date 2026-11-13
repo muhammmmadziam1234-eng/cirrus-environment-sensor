@@ -1,0 +1,55 @@
+{
+  "units": "mm",
+  "envelope": {
+    "width": 104.0,
+    "height": 109.0,
+    "body_depth": 33.6,
+    "wall_to_face": 41.3,
+    "wall_datum_to_rear_floor": 7.7
+  },
+  "vent_and_feedthrough": {
+    "slot_count": 13,
+    "slot_width": 2.38,
+    "slot_lengths_left_to_right": [
+      9.8,
+      11.4,
+      13.0,
+      14.0,
+      14.0,
+      14.0,
+      14.0,
+      14.0,
+      14.0,
+      14.0,
+      13.0,
+      11.4,
+      9.8
+    ],
+    "bulkhead_to_lowest_grille_opening": 7.9,
+    "bulkhead_to_cover_window": 2.9,
+    "grille_to_screen_wire": 2.2808,
+    "feedthrough_slit_height": 0.57,
+    "flex_height_at_feedthrough": 0.24
+  },
+  "seal": {
+    "free_height": 2.5,
+    "seat_to_land": 1.9,
+    "rigid_overlap": 0.6,
+    "nominal_squeeze_percent": 24.0,
+    "rail_channel_width_at_upper_straight": 2.36
+  },
+  "mount": {
+    "anchor_count": 4,
+    "anchor_width": 4.7,
+    "anchor_height": 9.3,
+    "anchor_pitch_x": 40.0,
+    "anchor_pitch_y": 61.6,
+    "rail_pitch_x": 58.6,
+    "flange_width": 7.2,
+    "receiver_throat_width": 5.8,
+    "capture_per_side": 0.7,
+    "flange_side_clearance_per_side": 0.3,
+    "flange_to_lip_depth_clearance": 0.15,
+    "upward_slide_to_clear_flange": 52.25
+  }
+}
