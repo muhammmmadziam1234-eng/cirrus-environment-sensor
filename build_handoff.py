@@ -422,7 +422,8 @@ def section_sheet(model, data):
     for name, color in section_parts(model):
         d.path(model.section(name, 0, 0), cut, color)
 
-    d.dimension(cut((high_y, 10)), cut((low_y, 10)), 205, number(envelope["height"]), vertical=True)
+    # Kept left of the "Wall datum" label so the dimension line does not cross it.
+    d.dimension(cut((high_y, 10)), cut((low_y, 10)), 150, number(envelope["height"]), vertical=True)
     d.dimension(cut((low_y, wall_z)), cut((low_y, front_z)), 855, number(envelope["wall_to_face"]))
     d.text(between(wall_x, cut((0, front_z))[0]), 880, "Wall datum to face", "small", "muted", "middle")
     details = [
@@ -444,8 +445,11 @@ def section_sheet(model, data):
     detail_bottom_right = cut((16.8, 15.7))
     d.rect(*detail_top_left, detail_bottom_right[0] - detail_top_left[0],
            detail_bottom_right[1] - detail_top_left[1], stroke="oxide", dash="3 2")
-    d.line([(detail_bottom_right[0], detail_bottom_right[1]), (439, 473), (459, 473)], "oxide")
-    d.text(465, 478, "D", "ref", "oxide")
+    # The D callout runs level to clear paper beyond the front face, between the part leaders.
+    callout_y = between(detail_top_left[1], detail_bottom_right[1])
+    face_x = cut((0, front_z))[0]
+    d.line([(detail_bottom_right[0], callout_y), (face_x + 8, callout_y)], "oxide")
+    d.text(face_x + 14, callout_y + 5, "D", "ref", "oxide")
 
     d.rect(801, 197, 590, 290, "panel")
     d.text(825, 227, "SECTION LOCATION", "ref")
@@ -524,7 +528,8 @@ def mounting_sheet(model, data):
             d.line([(px - 8, py), (px + 8, py)], "muted", 0.75)
             d.line([(px, py - 8), (px, py + 8)], "muted", 0.75)
     d.dimension(elev((-ax, ay)), elev((ax, ay)), 266, number(mount["anchor_pitch_x"]))
-    d.dimension(elev((-ax, ay)), elev((-ax, -ay)), 137, number(mount["anchor_pitch_y"]), vertical=True)
+    # Kept left of the B cutting-plane marker so the two labels do not overlap.
+    d.dimension(elev((-ax, ay)), elev((-ax, -ay)), 104, number(mount["anchor_pitch_y"]), vertical=True)
     rail_x = mount["rail_pitch_x"] / 2
     _, rail_bottom = elev((0, model.bounds("Cleat rail | captured flange", 1)[0]))
     d.dimension((elev((-rail_x, 0))[0], rail_bottom), (elev((rail_x, 0))[0], rail_bottom),
