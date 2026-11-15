@@ -43,3 +43,5 @@ blender --background --factory-startup --threads 3 --python-exit-code 1 --python
 ```
 
 Omit `-- --build-only` to render the studio views, or use `-- --preview` for smaller proofs. The scripts use Blender's bundled Python and require no external assets.
+
+© 2026 muhammmmadziam1234-eng. All rights reserved.
